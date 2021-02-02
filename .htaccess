@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteBase /
+
+RewriteRule ^(.+)\.php$ /$1 [R,L]
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*?)/?$ /$1.php [NC,END]
+
+ErrorDocument 404 https://staj.oguzhan.dev/404.php
+ErrorDocument 405 https://staj.oguzhan.dev/505.php
